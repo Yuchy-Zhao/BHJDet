@@ -248,7 +248,7 @@ class CrowdHuman(torch.utils.data.Dataset):
             max_box = min(self.config.max_boxes_of_image, len(it))
             gt_padded[:max_box] = it[:max_box]
             ground_truth.append(gt_padded)
-        ground_truth = torch.tensor(ground_truth).float()
+        ground_truth = torch.tensor(np.array(ground_truth)).float()
         # im_info
         im_info[:, 0] = t_height
         im_info[:, 1] = t_width

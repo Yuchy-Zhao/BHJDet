@@ -811,8 +811,8 @@ class COCOMReval:
                 tps = tps[:,inds]
                 fps = fps[:,inds]
 
-                tp_sum = np.cumsum(tps, axis=1).astype(dtype=np.float)
-                fp_sum = np.cumsum(fps, axis=1).astype(dtype=np.float)
+                tp_sum = np.cumsum(tps, axis=1).astype(dtype=np.float_)
+                fp_sum = np.cumsum(fps, axis=1).astype(dtype=np.float_)
                 for t, (tp, fp) in enumerate(zip(tp_sum, fp_sum)):
                     tp = np.array(tp)
                     fppi = np.array(fp)/I0
@@ -912,8 +912,8 @@ class COCOMReval:
                     tps = tps[:,inds]
                     fps = fps[:,inds]
 
-                    tp_sum = np.cumsum(tps, axis=1).astype(dtype=np.float)
-                    fp_sum = np.cumsum(fps, axis=1).astype(dtype=np.float)
+                    tp_sum = np.cumsum(tps, axis=1).astype(dtype=np.float_)
+                    fp_sum = np.cumsum(fps, axis=1).astype(dtype=np.float_)
                     for t, (tp, fp) in enumerate(zip(tp_sum, fp_sum)):
                         tp = np.array(tp)
                         fppi = np.array(fp)/I0
@@ -1013,7 +1013,8 @@ class Params:
         self.catIds = []
         # np.arange causes trouble.  the data point on arange is slightly larger than the true value
 
-        self.recThrs = np.linspace(.0, 1.00, np.round((1.00 - .0) / .01) + 1, endpoint=True)
+        self.recThrs = np.linspace(.0, 1.00, int(np.round((1.00 - .0) / .01)) + 1, endpoint=True)
+        # self.recThrs = np.linspace(.0, 1.00, np.round((1.00 - .0) / .01) + 1, endpoint=True)
         #self.fppiThrs= np.linspace(.0, 1.00, np.round((1.00 - .0) / .01) + 1, endpoint=True)
         #print(self.fppiThrs)
         self.fppiThrs = np.array([0.0100,    0.0178,    0.0316,    0.0562,    0.1000,    0.1778,    0.3162,    0.5623,    1.0000])

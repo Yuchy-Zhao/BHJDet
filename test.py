@@ -8,8 +8,8 @@ from tqdm import tqdm
 import torch
 from torch.multiprocessing import Queue, Process
 
-sys.path.insert(0, '../lib')
-sys.path.insert(0, '../model')
+sys.path.insert(0, './lib')
+sys.path.insert(0, './model')
 # from data.CrowdHuman import CrowdHuman
 from data.CrowdHuman_json import CrowdHuman
 from utils import misc_utils, nms_utils
@@ -22,8 +22,8 @@ MAX_VAL = 8e6
 
 def eval_all(args, config, network):
     # model_path
-    saveDir = os.path.join('../model', args.model_dir, config.model_dir)
-    evalDir = os.path.join('../model', args.model_dir, config.eval_dir)
+    saveDir = os.path.join('./model', args.model_dir, config.model_dir)
+    evalDir = os.path.join('./model', args.model_dir, config.eval_dir)
     misc_utils.ensure_dir(evalDir)
     if 'pth' not in args.resume_weights:
         model_file = os.path.join(saveDir, 
@@ -459,7 +459,7 @@ def run_test():
     os.environ['NCCL_IB_DISABLE'] = '1'
     args = parser.parse_args()
     # import libs
-    model_root_dir = os.path.join('../model/', args.model_dir)
+    model_root_dir = os.path.join('./model/', args.model_dir)
     sys.path.insert(0, model_root_dir)
     if args.config == 'pos':
         from config_pos import config

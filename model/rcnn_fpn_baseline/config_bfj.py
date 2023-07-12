@@ -14,17 +14,17 @@ add_path(os.path.join(root_dir, 'lib'))
 class Crowd_human:
     class_names = ['background', 'person', 'face']
     num_classes = len(class_names)
-    root_folder = '/ssd/data/CrowdHuman'
-    image_folder = '/ssd/data/CrowdHuman_full_cocostyle/Images'
-    train_source = os.path.join('/ssd/data/CrowdHuman_full_cocostyle/Annotations/instances_train_full_bhf_new.json')
-    eval_source = os.path.join('/ssd/data/CrowdHuman_full_cocostyle/Annotations/instances_val_full_bhf_new.json')
+    root_folder = '/data/yunqi/Track/BHJDet/data/CrowdHuman'
+    image_folder = '/data/yunqi/Track/BHJDet/data/CrowdHuman/Images'
+    train_source = os.path.join('/data/yunqi/Track/BHJDet/data/CrowdHuman/Annotations/instances_train_full_bhf_new.json')
+    eval_source = os.path.join('/data/yunqi/Track/BHJDet/data/CrowdHuman/Annotations/instances_val_full_bhf_new.json')
 
 class Config:
     network = 'bfj'
     output_dir = 'outputs_bfj'
     model_dir = os.path.join(output_dir, 'model_dump')
     eval_dir = os.path.join(output_dir, 'eval_dump')
-    init_weights = '/ssd/data/pretrain_models/resnet50_fbaug.pth'
+    init_weights = '/data/yunqi/Track/BHJDet/data/pretrain_models/resnet50_fbaug.pth'
 
     # ----------data config---------- #
     image_mean = np.array([103.530, 116.280, 123.675])

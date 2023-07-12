@@ -3,11 +3,11 @@ import sys
 import cv2
 import argparse
 
-sys.path.insert(0, '../lib')
+sys.path.insert(0, './lib')
 from utils import misc_utils, visual_utils
 
 # img_root = '/data/CrowdHuman/images/'
-img_root = '/ssd/jfdeng/data/CrowdHuman_full_cocostyle/Images/'
+img_root = '/data/yunqi/Track/BHJDet/data/CrowdHuman/Images/'
 def eval_all(args):
     # json file
     assert os.path.exists(args.json_file), "Wrong json path!"
@@ -38,7 +38,7 @@ def run_eval():
     parser = argparse.ArgumentParser()
     parser.add_argument('--json_file', '-f', default=None, required=True, type=str)
     parser.add_argument('--number', '-n', default=3, type=int)
-    parser.add_argument('--visual_thresh', '-v', default=0.3, type=int)
+    parser.add_argument('--visual_thresh', '-v', default=0.5, type=int)
     args = parser.parse_args()
     eval_all(args)
 

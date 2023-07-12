@@ -23,19 +23,21 @@ class COCO(object):
             self.image_id[content['id']] = content['file_name']
 
     def del_image_id(self):
-        self.image_id_new = {}
-        for key, value in self.image_id.items():
-            for idx, result_ann in enumerate(self.anno['annotations']):
-                if result_ann['image_id'] == key:
-                    if result_ann['ignore'] == 0:
-                        self.image_id_new[key] = value
-                        break
+        self.image_id_new = self.image_id
+        # self.image_id_new = {}
+        # for key, value in self.image_id.items():
+        #     for idx, result_ann in enumerate(self.anno['annotations']):
+        #         if result_ann['image_id'] == key:
+        #             if result_ann['ignore'] == 0:
+        #                 self.image_id_new[key] = value
+        #                 break
 
     def _category_id(self):
         self.category_id = {}
         for idx, category_id_name_dict in enumerate(self.anno['categories']):
             self.category_id[category_id_name_dict['id']] = category_id_name_dict['name']
         print(self.category_id)
+    
     def _anno_process(self, if_have_face = False):
         self.annotation_id = {}
         self.annotation_face_id = {}

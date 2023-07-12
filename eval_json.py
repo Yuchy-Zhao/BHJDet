@@ -2,7 +2,7 @@ import os
 import sys
 import argparse
 
-sys.path.insert(0, '../lib')
+sys.path.insert(0, './lib')
 from utils import misc_utils
 from evaluate import compute_JI, compute_APMR
 
@@ -10,7 +10,7 @@ def eval_all(args):
     # ground truth file
     # gt_path = '/data/CrowdHuman/annotation_val.odgt'
     # gt_path = '/ssd/jfdeng/data/CrowdHuman/raw/crowdhuman/annotation_val.odgt'
-    gt_path = '/ssd/jfwan/workspace/pydestrian/datasets/CrowdHuman_full_cocostyle/Annotations/val_face.json'
+    gt_path = '/data/yunqi/Track/BHJDet/data/CrowdHuman/Annotations/instances_val_full_bhf_new.json'
     assert os.path.exists(gt_path), "Wrong ground truth path!"
     misc_utils.ensure_dir('outputs')
     # output file

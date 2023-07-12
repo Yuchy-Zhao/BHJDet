@@ -3,8 +3,8 @@ import sys
 import argparse
 import torch
 
-sys.path.insert(0, '../lib')
-sys.path.insert(0, '../model')
+sys.path.insert(0, './lib')
+sys.path.insert(0, './model')
 # from data.CrowdHuman import CrowdHuman
 from data.CrowdHuman_json import CrowdHuman
 from utils import misc_utils, SGD_bias
@@ -138,10 +138,10 @@ def multi_train(params, config, network):
     train_config.momentum = config.momentum
     train_config.weight_decay = config.weight_decay
     train_config.lr_decay = config.lr_decay
-    train_config.model_dir = os.path.join('../model/', params.model_dir, config.model_dir)
+    train_config.model_dir = os.path.join('./model/', params.model_dir, config.model_dir)
     line = 'network.lr.{}.train.{}'.format(
             train_config.learning_rate, train_config.total_epoch)
-    train_config.log_path = os.path.join('../model/', params.model_dir, config.output_dir, line+'.log')
+    train_config.log_path = os.path.join('./model/', params.model_dir, config.output_dir, line+'.log')
     train_config.resume_weights = params.resume_weights
     train_config.init_weights = config.init_weights
     train_config.log_dump_interval = config.log_dump_interval
@@ -166,7 +166,7 @@ def run_train():
     #os.environ['NCCL_DEBUG'] = 'INFO'
     args = parser.parse_args()
     # import libs
-    model_root_dir = os.path.join('../model/', args.model_dir)
+    model_root_dir = os.path.join('./model/', args.model_dir)
     sys.path.insert(0, model_root_dir)
     if args.config == 'pos':
         from config_pos import config

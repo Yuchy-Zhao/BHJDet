@@ -37,6 +37,12 @@ Please follow instructions below to get these data.
 1. Download images from https://www.cityscapes-dataset.com/.
 2. Download annotations from [GoogleDrive](https://drive.google.com/drive/folders/1PxGTo_SE8O56r0qw7DgmR3Lk-eokS0X0), which contains the original body boxes and our newly annotated head/face boxes.
 
+```shell
+---| data
+------| CrowdHuman (Train & Val)
+---------| Annotations
+---------| Images
+```
 
 ## New metric: *Miss Matching Rate*
 
@@ -50,11 +56,11 @@ We propose a new metric: miss matching rate ($mMR^{-2}$) to estimate quality of 
 ### 1. Environment settings
 
 * python 3.6.9
-* pytorch 1.5.0
-* torchvision 0.6.0
-* cuda 10.1
-* scipy 1.5.4
-
+* pytorch 1.12.0
+* torchvision 0.13.0
+* cuda 11.6
+* scipy 1.10.1
+* tqdm, opecv-python, matplotlib
 
 ### 2. Train/Test:
 

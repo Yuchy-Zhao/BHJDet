@@ -147,7 +147,7 @@ def fpn_roi_target_bfj(rpn_rois, im_info, gt_boxes, top_k=1):
         return_bbox_targets.append(bbox_targets)
         return_centers.append(centers)
     if config.train_batch_per_gpu == 1:
-        return rois, labels,tags, ious, centers, bbox_targets
+        return rois, labels, tags, ious, centers, bbox_targets
     else:
         return_rois = torch.cat(return_rois, axis=0)
         return_labels = torch.cat(return_labels, axis=0)

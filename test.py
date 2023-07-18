@@ -11,7 +11,7 @@ from torch.multiprocessing import Queue, Process
 sys.path.insert(0, './lib')
 sys.path.insert(0, './model')
 # from data.CrowdHuman import CrowdHuman
-from data.CrowdHuman_json import CrowdHuman
+from data.CrowdHuman_face import CrowdHuman
 from utils import misc_utils, nms_utils
 from evaluate import compute_JI, compute_APMR
 from evaluate import compute_MMR

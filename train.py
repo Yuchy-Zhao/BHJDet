@@ -6,7 +6,7 @@ import torch
 sys.path.insert(0, './lib')
 sys.path.insert(0, './model')
 # from data.CrowdHuman import CrowdHuman
-from data.CrowdHuman_json import CrowdHuman
+from data.CrowdHuman_face import CrowdHuman
 from utils import misc_utils, SGD_bias
 
 class Train_config:

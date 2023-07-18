@@ -2,7 +2,7 @@ import os
 import json
 import numpy as np
 from .image import *
-from data.CrowdHuman_json import COCO
+from lib.data.CrowdHuman_face import COCO
 
 # PERSON_CLASSES = ['background', 'person']
 PERSON_CLASSES = ['background', 'person', 'face']
